@@ -1,0 +1,1404 @@
+/* Variables CSS - Tonos de Guinda Vibrantes */
+:root {
+    --primary-color: #7B002B;    /* Guinda intenso y vibrante para elementos principales */
+    --secondary-color: #A0003A;   /* Un guinda cereza, para títulos o toques especiales */
+    --accent-color: #FFD700;     /* Dorado brillante (Gold), perfecto para resaltar */
+    --text-color: #333;           /* Texto oscuro general para buena legibilidad */
+    --light-text-color: #FFFFFF; /* Blanco puro para texto sobre fondos oscuros */
+    --background-light: #F8F8F8; /* Un blanco roto o gris muy claro para fondos generales */
+    --background-dark: #2A0010;   /* Un guinda muy oscuro, casi negro, para contraste profundo */
+}
+
+/* Reset básico para asegurar consistencia entre navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Fuente principal para todo el cuerpo */
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--background-light);
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px; /* Ancho máximo para el contenido principal */
+    margin: auto; /* Centra el contenedor */
+    overflow: hidden;
+    padding: 0 20px; /* Padding horizontal para evitar que el contenido toque los bordes */
+}
+
+/* --- Encabezado --- */
+.header {
+    background: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centrar el contenido del header */
+    gap: 15px; /* Espacio entre el logo y el texto */
+}
+
+.header .logo {
+    height: 60px; /* Ajusta el tamaño del logo según sea necesario */
+    width: auto;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: var(--light-text-color); /* Las letras de CONALEP Temoaya son blancas */
+}
+
+/* --- Íconos Flotantes de Redes Sociales --- */
+.social-icons-float {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000; /* Asegura que estén sobre otros elementos */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    color: white; /* Color por defecto de los iconos, ya que algunos no tienen fondo degradado */
+    font-size: 28px;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.social-icon.facebook {
+    background-color: #3b5998; /* Color de Facebook */
+}
+
+.social-icon.whatsapp {
+    background-color: #25d366; /* Color de WhatsApp */
+}
+
+/* Nuevos estilos para X (Twitter) e Instagram */
+.social-icon.x-icon {
+    background-color: #000000; /* Color oficial de X (negro) */
+    border: 2px solid #FFFFFF; /* Añade un borde blanco para que resalte */
+}
+
+/* FUERZA el color blanco para el ícono 'X' dentro de su contenedor */
+.social-icon.x-icon i.fab.fa-x-twitter {
+    color: #FFFFFF;
+}
+
+.social-icon.instagram {
+    /* Degradado de Instagram */
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+/* --- Carrusel de Imágenes --- */
+.carousel-section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 30px;
+    background-color: var(--background-dark); /* Fondo guinda muy oscuro para el carrusel */
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+}
+
+.carousel-slide {
+    display: none; /* Oculta todas las imágenes por defecto */
+    text-align: center;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 60vh; /* Altura de la imagen, ajusta según sea necesario */
+    object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsionarse */
+    filter: brightness(70%); /* Oscurece la imagen para que el texto resalte */
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--light-text-color); /* El texto del carrusel también es blanco */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    z-index: 5;
+    width: 80%;
+}
+
+.carousel-caption h2 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    color: var(--light-text-color); /* El título "Formando el futuro de México" es blanco */
+}
+
+.carousel-caption p {
+    font-size: 1.5rem;
+    line-height: 1.4;
+}
+
+/* Navegación del carrusel (botones prev/next) */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.5);
+    text-decoration: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Puntos indicadores del carrusel */
+.carousel-dots {
+    padding: 15px;
+    background-color: var(--primary-color);
+    text-align: center;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: var(--accent-color); /* Los puntos activos y hover son dorados */
+}
+
+/* Transición para las imágenes del carrusel */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+/* --- Mejoras para la Sección de Información/Tarjetas (para la página principal) --- */
+.info-section {
+    padding: 60px 0;
+    text-align: center;
+    background-color: var(--background-light);
+}
+
+.info-section h2 {
+    font-size: 3.2rem;
+    color: var(--primary-color);
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+}
+
+.info-section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 5px;
+    background-color: var(--secondary-color);
+    border-radius: 2px;
+}
+
+/* Contenedor de las tarjetas */
+.info-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    gap: 40px;
+    margin-top: 40px;
+    max-width: 1200px; /* Limita el ancho máximo del contenedor de tarjetas */
+    margin-left: auto; /* Centra el contenedor de tarjetas */
+    margin-right: auto; /* Centra el contenedor de tarjetas */
+    padding: 0 20px;
+}
+
+/* Estilos para cada tarjeta individual */
+.card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    padding: 35px;
+    text-align: center;
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.icon-wrapper {
+    margin-bottom: 25px;
+}
+
+.icon-wrapper i {
+    font-size: 4.5rem;
+    color: var(--accent-color);
+    transition: transform 0.3s ease;
+}
+
+.card:hover .icon-wrapper i {
+    transform: scale(1.1);
+}
+
+.card h3 {
+    font-size: 2.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.card p {
+    font-size: 1.05rem;
+    margin-bottom: 30px;
+    color: #555;
+    flex-grow: 1;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--accent-color);
+    color: white;
+    padding: 14px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.05rem;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.btn:hover {
+    background-color: #ccaa00;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* --- SECCIÓN DE CARRERAS (carreras.html) --- */
+.careers-content {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.careers-content h2 {
+    font-size: 3.2rem;
+    color: var(--primary-color);
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+}
+
+.careers-content h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 5px;
+    background-color: var(--secondary-color);
+    border-radius: 2px;
+}
+
+/* Contenedor principal de los bloques de carrera */
+.career-blocks-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Aumentamos el min-width para que sean más anchos */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    align-items: stretch; /* Volvemos a 'stretch' para que las alturas se igualen si es necesario */
+}
+
+/* Estilos para cada bloque de carrera individual */
+.career-block {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Reducimos significativamente la altura mínima para favorecer una forma rectangular */
+    min-height: 400px; /* Ajusta este valor según la cantidad mínima de contenido que tengas */
+    height: 100%;
+}
+
+.career-block:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+/* Wrapper para la imagen */
+.image-wrapper {
+    width: 100%;
+    /* height: 180px; */ /* ELIMINAR O COMENTAR ESTA LÍNEA */
+    aspect-ratio: 16 / 9; /* Establece una relación de aspecto fija (ancho / alto). Prueba 4 / 3, 3 / 2, etc. */
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid var(--accent-color);
+    flex-shrink: 0;
+}
+/* Wrapper para la imagen */
+.image-wrapper {
+    width: 100%;
+    height: 180px; /* Mantendríamos la altura fija para que todos los contenedores de imagen sean iguales */
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid var(--accent-color);
+    flex-shrink: 0;
+    background-color: #f0f0f0; /* Opcional: define un color para el espacio vacío si usas 'contain' */
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* CAMBIO CLAVE: La imagen se escala para que quepa completamente */
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+/* Wrapper para el contenido de texto */
+.content-wrapper {
+    padding: 20px; /* Redujimos un poco el padding vertical */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex-grow: 1;
+    /* Eliminamos el justify-content: space-between; para que el contenido se apile naturalmente */
+}
+
+.career-block-title {
+    font-size: 2.1rem; /* Ligera reducción del tamaño del título */
+    color: var(--primary-color);
+    margin-bottom: 10px; /* Redujimos el margen inferior del título */
+    position: relative;
+    padding-bottom: 8px;
+    line-height: 1.2;
+}
+
+.career-block-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 50%; /* Ligeramente más corto el subrayado */
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+.short-description {
+    font-size: 1.0rem; /* Ligera reducción del tamaño de la descripción */
+    color: #666;
+    margin-bottom: 10px; /* Redujimos el margen inferior de la descripción */
+    line-height: 1.5;
+    text-align: justify;
+    flex-grow: 1;
+}
+
+.competencias-title {
+    font-size: 1.15rem; /* Ligera reducción del tamaño del título de competencias */
+    color: var(--secondary-color);
+    margin-top: 10px; /* Redujimos el margen superior */
+    margin-bottom: 8px; /* Redujimos el margen inferior */
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 4px;
+    display: inline-block;
+    width: auto;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    flex-shrink: 0;
+}
+
+.competencias-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    width: 100%;
+    /* Eliminamos el flex-grow de la lista para que no empuje la altura */
+    margin-bottom: 15px; /* Redujimos el margen inferior de la lista */
+}
+
+.competencias-list li {
+    font-size: 0.9rem; /* Ligera reducción del tamaño de los ítems de la lista */
+    color: #555;
+    margin-bottom: 6px; /* Reducimos el margen inferior de cada ítem */
+    padding-left: 22px;
+    position: relative;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.competencias-list li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 1em;
+}
+
+/* --- ESTILOS PARA LA SECCIÓN DE REPOSICIÓN DE CREDENCIAL --- */
+.reposition-section {
+    padding: 60px 0;
+    text-align: center;
+    background-color: var(--background-light);
+}
+
+.reposition-section .section-header {
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.reposition-section h2 {
+    font-size: 3.2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.reposition-section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 5px;
+    background-color: var(--secondary-color);
+    border-radius: 2px;
+}
+
+.reposition-section .intro-text {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #555;
+    line-height: 1.8;
+}
+
+.reposition-section .container .content-block {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reposition-section .container .content-block:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.content-block h3 {
+    font-size: 2.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.content-block h3::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+.content-block p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+.main-download-button {
+    display: inline-flex;
+    align-items: center;
+    background: var(--primary-color);
+    color: white;
+    padding: 15px 35px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.15rem;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.main-download-button i {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.main-download-button:hover {
+    background-color: #5a0020;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+.small-text-info {
+    font-size: 0.9em;
+    margin-top: 15px;
+    color: #888;
+}
+
+/* --- Estilos Mejorados para los Pasos de Pago --- */
+.payment-steps-container {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.payment-steps-container h3 {
+    font-size: 2.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.payment-steps-container h3::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+.styled-steps {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.step-item {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.step-number {
+    background-color: var(--accent-color);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+/* --- ESTILOS PARA LA SECCIÓN DE CONTACTO --- */
+
+/* Ajustes generales para la sección de contacto */
+.contact-section {
+    padding: 60px 0; /* Aumenta el padding general de la sección para más aire */
+    text-align: center; /* Asegura que el contenido esté centrado */
+    background-color: var(--background-light); /* Mantener el color de fondo */
+}
+
+/* Ajustes para el contenedor del encabezado de la sección de contacto */
+.contact-section .section-header {
+    margin-bottom: 60px; /* Más espacio debajo del encabezado completo */
+    padding-bottom: 20px;
+    border-bottom: none; /* ELIMINADO: Borde inferior del header para un look más limpio */
+}
+
+/* AJUSTES CLAVE PARA EL TÍTULO "CONTÁCTANOS" */
+.contact-section h2 {
+    font-size: 3.5rem; /* ¡Más grande y prominente! */
+    color: var(--primary-color); /* Guinda */
+    margin-bottom: 25px; /* Más espacio debajo del título */
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase; /* ¡Para que resalte aún más! */
+    letter-spacing: 2px; /* Un pequeño espaciado entre letras */
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* Sombra sutil para darle profundidad */
+}
+
+/* AJUSTES CLAVE PARA EL SUBRAYADO DEL TÍTULO "CONTÁCTANOS" */
+.contact-section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -15px; /* Un poco más abajo del título */
+    transform: translateX(-50%);
+    width: 150px; /* ¡Más largo! */
+    height: 6px; /* ¡Más grueso! */
+    background-color: var(--accent-color); /* ¡Dorado brillante para resaltar! */
+    border-radius: 3px;
+}
+
+/* AJUSTES PARA EL TEXTO INTRODUCTORIO "Comunícate con nosotros..." */
+.contact-section .intro-text {
+    font-size: 1.15rem; /* Ligeramente más grande para más presencia */
+    max-width: 700px; /* Un poco más compacto, ayuda a la legibilidad */
+    margin: 0 auto 30px auto; /* Centrado y añade un margen inferior para separar de los bloques */
+    color: #444; /* Un gris un poco más oscuro para mejor contraste */
+    line-height: 1.7; /* Ligeramente menor interlineado para compactar si se ve muy suelto */
+}
+
+
+/* Contenedor principal de los elementos de contacto */
+.contact-info-block {
+    display: grid; /* Usamos Grid para un control preciso de las columnas */
+    /* Aumentamos ligeramente el min-width para dar más espacio a cada tarjeta */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Ajustado de 250px a 260px */
+    gap: 25px; /* Espacio entre las tarjetas */
+    margin-top: 40px;
+    margin-bottom: 50px;
+    max-width: 1200px; /* Asegura que el bloque no se estire demasiado en pantallas muy grandes */
+    margin-left: auto; /* Centra el bloque de contacto */
+    margin-right: auto; /* Centra el bloque de contacto */
+    padding: 0 20px; /* Espacio interno para que no se pegue a los bordes */
+    align-items: start; /* Alinea los ítems al inicio de la fila, evitando estiramientos innecesarios */
+}
+
+/* Estilos para cada tarjeta individual de contacto */
+.contact-item {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 120px;
+    /* *** CAMBIOS CLAVE PARA EL CORREO ELECTRÓNICO AQUÍ *** */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    overflow: hidden; /* IMPORTANTE: oculta el desbordamiento sin barras visibles */
+    text-overflow: ellipsis; /* Añade '...' si el texto se corta (más un fallback) */
+    white-space: normal; /* Asegura que el texto se envuelva a la siguiente línea */
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.contact-item i {
+    font-size: 2rem; /* Tamaño del icono */
+    color: var(--accent-color); /* Color dorado para los iconos */
+    flex-shrink: 0; /* Evita que el icono se encoja si el espacio es limitado */
+    margin-top: 5px; /* Pequeño ajuste para la alineación vertical del icono con el texto */
+}
+
+/* Contenedor del texto (Director, Dirección, etc.) */
+.info-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Permite que este div ocupe el espacio restante */
+}
+
+.contact-item h4 {
+    font-size: 1.15rem; /* Tamaño del título (Director:, Dirección:, etc.) */
+    color: var(--secondary-color); /* Color guinda cereza */
+    margin-bottom: 5px; /* Espacio debajo del título */
+    line-height: 1.2; /* Ajuste para títulos de varias líneas si es necesario */
+    white-space: normal; /* Permite que el título se rompa en varias líneas */
+    overflow: visible;
+    text-overflow: clip;
+}
+
+/* AJUSTES CLAVE PARA EL PÁRRAFO DENTRO DE LAS TARJETAS DE CONTACTO (INCLUYENDO CORREO) */
+.contact-item p {
+    font-size: 0.85rem; /* AJUSTADO: tamaño ligeramente más pequeño para dar más espacio */
+    color: #666;
+    margin: 0;
+    line-height: 1.4;
+    word-wrap: break-word; /* Asegura que el texto largo se rompa si es necesario */
+    overflow-wrap: break-word; /* Asegura que el texto largo se rompa si es necesario */
+    hyphens: auto; /* Intenta hyphenar palabras largas para mejor ajuste */
+}
+
+.contact-item p a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item p a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* --- Mapa de Contacto --- */
+.map-container {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    overflow: hidden;
+    margin-top: 50px;
+    max-width: 1000px; /* Limita el ancho del contenedor del mapa */
+    margin-left: auto; /* Centra el contenedor del mapa */
+    margin-right: auto; /* Centra el contenedor del mapa */
+}
+
+.map-container h3 {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.map-container h3::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+.map-container iframe {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    width: 100%;
+    height: 450px;
+    border:0;
+}
+
+.map-info {
+    font-size: 0.95em;
+    color: #888;
+    margin-top: 15px;
+}
+
+/* --- Pie de Página --- */
+.footer {
+    background: var(--primary-color);
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 50px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+}
+
+.footer p {
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+}
+
+/* --- Media Queries para Responsividad --- */
+
+/* Ajustes generales para pantallas medianas (tablets) */
+@media (max-width: 992px) {
+    /* Header */
+    .header .logo {
+        height: 55px;
+    }
+    .header h1 {
+        font-size: 2.2rem;
+    }
+
+    /* Social Icons */
+    .social-icons-float {
+        right: 15px;
+        gap: 12px;
+    }
+    .social-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 26px;
+    }
+
+    /* Carousel */
+    .carousel-slide img {
+        height: 50vh;
+    }
+    .carousel-caption h2 {
+        font-size: 2.8rem;
+    }
+    .carousel-caption p {
+        font-size: 1.3rem;
+    }
+    .prev, .next {
+        font-size: 28px;
+    }
+
+    /* Info Section (Tarjetas si las usas) */
+    .info-section {
+        padding: 50px 0;
+    }
+    .info-section h2 {
+        font-size: 2.8rem;
+        margin-bottom: 40px;
+    }
+    .info-section h2::after {
+        width: 90px;
+        bottom: -12px;
+    }
+    .info-cards {
+        gap: 30px;
+    }
+    .card {
+        padding: 30px;
+        min-width: 250px;
+        max-width: 320px;
+    }
+    .icon-wrapper i {
+        font-size: 4rem;
+        margin-bottom: 20px;
+    }
+    .card h3 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    .card p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+    .btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+
+    /* Careers Section (Carreras) */
+    .careers-content h2 {
+        font-size: 2.8rem;
+        margin-bottom: 40px;
+    }
+    .careers-content h2::after {
+        width: 90px;
+        bottom: -12px;
+    }
+    .career-blocks-container {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Reducimos el min-width para más flexibilidad */
+        gap: 25px;
+    }
+    .career-block {
+        min-height: 350px; /* Reducimos la altura mínima para tablets */
+    }
+    .image-wrapper {
+        height: 150px; /* Reducimos la altura de la imagen en tablets */
+    }
+    .content-wrapper {
+        padding: 15px;
+    }
+    .career-block-title {
+        font-size: 1.8rem;
+    }
+    .short-description {
+        font-size: 0.95rem;
+    }
+    .competencias-title {
+        font-size: 1.1rem;
+    }
+    .competencias-list li {
+        font-size: 0.85rem;
+    }
+
+    /* Reposition Section (Página actual) */
+    .reposition-section {
+        padding: 40px 0;
+    }
+    .reposition-section .section-header {
+        margin-bottom: 40px;
+    }
+    .reposition-section h2 {
+        font-size: 2.8rem;
+    }
+    .reposition-section h2::after {
+        width: 100px;
+        bottom: -8px;
+    }
+    .reposition-section .intro-text {
+        font-size: 1.1rem;
+    }
+    .reposition-section .container .content-block,
+    .payment-steps-container {
+        padding: 30px;
+        margin-bottom: 30px;
+    }
+    .content-block h3 {
+        font-size: 1.9rem;
+        margin-bottom: 20px;
+    }
+    .content-block h3::after {
+        width: 70px;
+    }
+    .content-block p {
+        font-size: 1rem;
+    }
+    .main-download-button {
+        padding: 12px 30px;
+        font-size: 1.05rem;
+    }
+    .main-download-button i {
+        font-size: 1.1em;
+    }
+    .step-item {
+        padding: 18px;
+        margin-bottom: 12px;
+        font-size: 1rem;
+    }
+    .step-number {
+        width: 35px;
+        height: 35px;
+        font-size: 1.1rem;
+        margin-right: 15px;
+    }
+
+    /* Contact Section - MEDIA QUERIES (secciones ajustadas) */
+    .contact-section h2 { /* Título de contacto para tablets */
+        font-size: 2.8rem; /* Ajustado */
+    }
+    .contact-section h2::after { /* Subrayado del título para tablets */
+        width: 120px; /* Ajustado */
+        height: 5px; /* Ajustado */
+        bottom: -10px; /* Ajustado */
+    }
+    .contact-section .intro-text { /* Texto introductorio para tablets */
+        font-size: 1.05rem; /* Ajustado */
+        margin-bottom: 25px; /* Ajustado */
+    }
+    .contact-info-block {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* 2 columnas en tablets, un poco más pequeñas */
+        gap: 20px;
+    }
+    .contact-item {
+        padding: 18px; /* Ligeramente menos padding */
+        min-height: 110px; /* Reducimos min-height para tablets */
+    }
+    .contact-item i {
+        font-size: 1.8rem;
+    }
+    .contact-item h4 {
+        font-size: 1.1rem;
+    }
+    .contact-item p {
+        font-size: 0.85rem; /* Ajustado para tablets */
+    }
+    .map-container {
+        padding: 25px;
+    }
+    .map-container h3 {
+        font-size: 1.8rem;
+    }
+    .map-container iframe {
+        height: 380px;
+    }
+
+    /* Footer */
+    .footer p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Ajustes para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .header .logo {
+        height: 50px;
+    }
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .social-icons-float {
+        right: 10px;
+        gap: 10px;
+    }
+    .social-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 24px;
+    }
+
+    .carousel-slide img {
+        height: 40vh;
+    }
+    .carousel-caption h2 {
+        font-size: 2.2rem;
+        margin-bottom: 10px;
+    }
+    .carousel-caption p {
+        font-size: 1.1rem;
+    }
+    .prev, .next {
+        font-size: 24px;
+        padding: 12px;
+    }
+
+    /* Info Section (Tarjetas si las usas) */
+    .info-section {
+        padding: 40px 0;
+    }
+    .info-section h2 {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+    }
+    .info-section h2::after {
+        width: 70px;
+        bottom: -8px;
+    }
+    .info-cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        padding: 0 15px;
+    }
+    .card {
+        max-width: 95%;
+        min-width: unset;
+        padding: 25px;
+    }
+    .icon-wrapper i {
+        font-size: 3.5rem;
+        margin-bottom: 15px;
+    }
+    .card h3 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+    .card p {
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+    }
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+
+    /* Careers Section (Carreras) */
+    .careers-content h2 {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+    }
+    .careers-content h2::after {
+        width: 70px;
+        bottom: -8px;
+    }
+    .career-blocks-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 15px;
+    }
+    .career-block {
+        min-height: unset; /* Reinicia la altura mínima para móviles, para mayor flexibilidad */
+    }
+    .image-wrapper {
+        height: 120px; /* Reducimos aún más la altura de la imagen en móviles */
+    }
+    .content-wrapper {
+        padding: 15px;
+    }
+    .career-block-title {
+        font-size: 1.6rem;
+    }
+    .short-description {
+        font-size: 0.9rem;
+    }
+    .competencias-title {
+        font-size: 1.0rem;
+    }
+    .competencias-list li {
+        font-size: 0.8rem;
+        padding-left: 20px;
+    }
+    .competencias-list li::before {
+        font-size: 1em;
+    }
+
+    /* Reposition Section (Página actual) */
+    .reposition-section {
+        padding: 30px 0;
+    }
+    .reposition-section .section-header {
+        margin-bottom: 30px;
+    }
+    .reposition-section h2 {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+    }
+    .reposition-section h2::after {
+        width: 80px;
+        bottom: -5px;
+    }
+    .reposition-section .intro-text {
+        font-size: 1.0rem;
+    }
+    .reposition-section .container .content-block,
+    .payment-steps-container {
+        padding: 25px;
+        margin-bottom: 25px;
+    }
+    .content-block h3 {
+        font-size: 1.7rem;
+        margin-bottom: 15px;
+    }
+    .content-block h3::after {
+        width: 60px;
+    }
+    .content-block p {
+        font-size: 0.95rem;
+    }
+    .main-download-button {
+        padding: 10px 25px;
+        font-size: 1rem;
+    }
+    .main-download-button i {
+        font-size: 1em;
+    }
+    .step-item {
+        padding: 15px;
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 0.95rem;
+        margin-bottom: 10px;
+    }
+    .step-number {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+
+    /* Contact Section - MEDIA QUERIES (secciones ajustadas) */
+    .contact-section h2 { /* Título de contacto para móviles */
+        font-size: 2.2rem; /* Ajustado */
+        margin-bottom: 15px; /* Ajustado */
+    }
+    .contact-section h2::after { /* Subrayado del título para móviles */
+        width: 80px; /* Ajustado */
+        height: 4px; /* Ligeramente más delgado */
+        bottom: -8px; /* Ajustado */
+    }
+    .contact-section .intro-text { /* Texto introductorio para móviles */
+        font-size: 0.95rem; /* Ajustado */
+        margin-bottom: 20px; /* Ajustado */
+    }
+    .contact-info-block {
+        grid-template-columns: 1fr; /* Una columna en móviles */
+        gap: 15px;
+        padding: 0 15px;
+    }
+    .contact-item {
+        padding: 15px; /* Más compacto en móviles */
+        flex-direction: row; /* Volvemos a fila para icono y texto, pero mantenemos flex-start */
+        align-items: flex-start; /* Icono y texto alineados arriba */
+        text-align: left; /* Alineación del texto a la izquierda */
+        min-height: unset; /* Quitamos la altura mínima para que se adapte al contenido */
+    }
+    .contact-item i {
+        font-size: 1.6rem;
+        margin-top: 2px; /* Ajuste para el icono */
+        margin-right: 10px; /* Espacio a la derecha del icono */
+        margin-bottom: 0; /* Aseguramos que no haya margen inferior si es fila */
+    }
+    .contact-item h4 {
+        font-size: 1.05rem;
+    }
+    .contact-item p {
+        font-size: 0.8rem; /* Ajustado para móviles */
+    }
+    .info-content {
+        flex-grow: 1; /* Permite que el contenido de texto ocupe el espacio restante */
+    }
+    .map-container iframe {
+        height: 300px;
+    }
+
+    /* Footer */
+    .footer p {
+        font-size: 0.85rem;
+    }
+}
+
+/* Ajustes muy específicos para pantallas de teléfono muy pequeñas */
+@media (max-width: 480px) {
+    .contact-item {
+        padding: 12px;
+    }
+    .contact-item i {
+        font-size: 1.4rem;
+    }
+    .contact-item h4 {
+        font-size: 0.95rem;
+    }
+    .contact-item p {
+        font-size: 0.75rem; /* AJUSTADO: Tamaño de fuente para pantallas muy pequeñas */
+    }
+    .header h1 {
+        font-size: 1.6rem;
+    }
+
+    .carousel-slide img {
+        height: 35vh;
+    }
+    .carousel-caption h2 {
+        font-size: 1.8rem;
+    }
+    .carousel-caption p {
+        font-size: 0.85rem;
+    }
+
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    /* Info Section (Tarjetas si las usas) */
+    .info-section h2 {
+        font-size: 1.8rem;
+    }
+    .icon-wrapper i {
+        font-size: 3rem;
+    }
+    .card h3 {
+        font-size: 1.6rem;
+    }
+    .card p {
+        font-size: 0.88rem;
+    }
+    .btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    /* Careers Section (Carreras) */
+    .careers-content h2 {
+        font-size: 1.8rem;
+    }
+    .image-wrapper {
+        height: 150px;
+    }
+    .content-wrapper {
+        padding: 15px;
+    }
+    .career-block-title {
+        font-size: 1.5rem;
+    }
+    .short-description {
+        font-size: 0.85rem;
+    }
+    .competencias-title {
+        font-size: 1.0rem;
+    }
+    .competencias-list li {
+        font-size: 0.8rem;
+        padding-left: 20px;
+    }
+}

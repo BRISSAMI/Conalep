@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca Virtual - Enfermería Oncológica</title>
+  <style>
+    :root {
+      --primary-guinda: #7a1126;
+      --secondary-yellow: #eab308;
+      --bg-light: #f8fafc;
+      --card-bg: #ffffff;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* Botón para regresar al index.html */
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--primary-guinda);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 25px;
+      transition: transform 0.2s ease;
+    }
+
+    .back-btn:hover {
+      transform: translateX(-4px);
+    }
+
+    .header-section {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .header-section h1 {
+      color: var(--primary-guinda);
+      font-size: 1.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .underline-accent {
+      width: 70px;
+      height: 4px;
+      background-color: var(--secondary-yellow);
+      margin: 0 auto 15px auto;
+      border-radius: 2px;
+    }
+
+    .header-section p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .list-section {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 30px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+
+    .section-title {
+      color: var(--primary-guinda);
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      border-left: 4px solid var(--secondary-yellow);
+      padding-left: 10px;
+    }
+
+    .links-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .links-list li {
+      background: var(--bg-light);
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      transition: all 0.2s ease;
+    }
+
+    .links-list li:hover {
+      border-color: var(--primary-guinda);
+      background: #fdf2f8;
+    }
+
+    .links-list a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+      text-decoration: none;
+      color: var(--text-dark);
+      font-size: 0.9rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .links-list a span.badge-num {
+      background-color: var(--primary-guinda);
+      color: #fff;
+      font-size: 0.75rem;
+      padding: 4px 9px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    .links-list a:hover span.badge-num {
+      background-color: var(--secondary-yellow);
+      color: var(--text-dark);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Botón que conecta BibliotecaV.html con index.html -->
+    <a href="BibliotecaV.html" class="back-btn">&larr; Regresar a la Biblioteca Virtual</a>
+
+    <div class="header-section">
+      <h1>Guía Pedagógica del Módulo Enfermería Oncológica</h1>
+      <div class="underline-accent"></div>
+      <p>Enlaces y referencias de consulta verificados.</p>
+    </div>
+
+    <div class="list-section">
+      <div class="section-title">Enlaces de Referencia</div>
+      <ul class="links-list">
+        <li>
+          <a href="http://dof.gob.mx/nota_detalle.php?codigo=5194157&fecha=09/06/2011" target="_blank">
+            <span class="badge-num">01</span>
+            <span>DOF - Diario Oficial de la Federación</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.gob.mx/conalep/acciones-y-programas/red-academica-27470" target="_blank">
+            <span class="badge-num">02</span>
+            <span>Red Académica | Colegio Nacional de Educación Profesional Técnica | Gobierno | gob.mx</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.cdc.gov/spanish/cancer/dcpc/prevention/" target="_blank">
+            <span class="badge-num">03</span>
+            <span>Cómo prevenir el cáncer o detectarlo tempranamente | CDC</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.cdc.gov/spanish/cancer/prostate/basic_info/screening.htm" target="_blank">
+            <span class="badge-num">04</span>
+            <span>¿En qué consiste la prueba de detección de cáncer de próstata? | CDC</span>
+          </a>
+        </li>
+        <li>
+          <a href="http://www.salud.gob.mx/unidades/cdi/nom/m014ssa24.html" target="_blank">
+            <span class="badge-num">05</span>
+            <span>MODIFICACION A LA NORMA OFICIAL MEXICANA NOM-014-SSA2-1994, PARA LA PREVENCION, TRATAMIENTO Y CONTROL DEL CANCER DEL CUELLO DEL UTERO Y MAMARIO EN LA ATENCION PRIMARIA</span>
+          </a>
+        </li>
+        <li>
+          <a href="http://dof.gob.mx/nota_detalle.php?codigo=5194157&fecha=09/06/2011" target="_blank">
+            <span class="badge-num">06</span>
+            <span>DOF - Diario Oficial de la Federación</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.gob.mx/conalep/acciones-y-programas/red-academica-27470" target="_blank">
+            <span class="badge-num">07</span>
+            <span>Red Académica | Colegio Nacional de Educación Profesional Técnica | Gobierno | gob.mx</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.cancer.gov/espanol/tipos" target="_blank">
+            <span class="badge-num">08</span>
+            <span>Tipos de cáncer - Instituto Nacional del Cáncer (cancer.gov)</span>
+          </a>
+        </li>
+        <li>
+          <a href="http://www.dof.gob.mx/nota_detalle.php?codigo=5268977&fecha=18/09/2012" target="_blank">
+            <span class="badge-num">09</span>
+            <span>DOF - Diario Oficial de la Federación</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.salud.gob.mx/unidades/cdi/nom/m014ssa24.html" target="_blank">
+            <span class="badge-num">10</span>
+            <span>MODIFICACION A LA NORMA OFICIAL MEXICANA NOM-014-SSA2-1994, PARA LA PREVENCION, TRATAMIENTO Y CONTROL DEL CANCER DEL CUELLO DEL UTERO Y MAMARIO</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://books.google.com.mx/books?id=BBQlAgAAQBAJ&pg=PA27&dq=libros+de+enfermeria+en+oncologia&hl=es-419&sa=X&ei=xk7AVKLjEpW2yATH8YKwDA&ved=0CEcQ6AEwBw" target="_blank">
+            <span class="badge-num">11</span>
+            <span>Enfermería en cuidados paliativos y al final de la vida - María Belén Martínez Cruz - Google Libros</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://books.google.com.mx/books?id=YD8OR_WZufgC&printsec=frontcover&dq=libros+de+enfermeria+en+oncologia&hl=es-419&sa=X&ei=xk7AVKLjEpW2yATH8YKwDA&ved=0CCEQ6AEwAA" target="_blank">
+            <span class="badge-num">12</span>
+            <span>Cuidados enfermeros al paciente oncológico - Isabel de la Torre Gálvez - Google Libros</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+</body>
+</html>
